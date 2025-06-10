@@ -6,7 +6,7 @@ import { useChatAction } from "../hooks/useChatAction";
 const MessageInput = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { sendMessage } = useChatAction();
 
   const handleImageChange = (e : React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +28,7 @@ const MessageInput = () => {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
-  const handleSendMessage = async (e : React.FormEvent<HTMLInputElement>) => {
+  const handleSendMessage = async (e : React.FormEvent<HTMLFormElement>):Promise<void> => {
     e.preventDefault();
     if (!text.trim() && !imagePreview) return;
 

@@ -1,4 +1,4 @@
-import React,{useEffect , useRef} from 'react'
+import {useEffect , useRef} from 'react'
 import { useChatAction } from '../hooks/useChatAction'
 import { authStore } from '../store/authStore';
 import ChatHeader from './ChatHeader';
@@ -20,7 +20,7 @@ const ChatContainer = () => {
 
   const user = authStore((state) => state.user)
 
-  const messageEndRef = useRef(null);
+  const messageEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if(!selectedUser) return

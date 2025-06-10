@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import type { Users, Messages } from '../store/chatStore'
 import { chatStore } from '../store/chatStore'
 import { useAxiosPrivate } from './useAxiosPrivate'
